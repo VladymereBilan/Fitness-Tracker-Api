@@ -1,6 +1,6 @@
 // authMiddleware.js
 const dotenv = require('dotenv');
-dotenv.config();
+
 
 // Middleware to check for a valid API key
 const apiKeyMiddleware = (req, res, next) => {
