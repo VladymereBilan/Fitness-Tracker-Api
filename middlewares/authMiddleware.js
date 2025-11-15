@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const apiKeyMiddleware = (req, res, next) => {
   const apiKey = req.header('x-api-key');  // Look for the API key in the 'x-api-key' header
 
-  if (!apiKey || apiKey !== process.env['x-api-key']) {  // Use the correct environment variable name
+  if (!apiKey || apiKey !== process.env['API_KEY']) {  // Use the correct environment variable name
     return res.status(401).json({ message: 'Unauthorized: Invalid or missing API key' });
   }
 
