@@ -4,7 +4,7 @@ dotenv.config();
 
 // Middleware to check for a valid API key
 const apiKeyMiddleware = (req, res, next) => {
-  const apiKey = req.header('api_key');  // Look for the API key in the 'x-api-key' header
+  const apiKey = req.header('x-api-key');  // Look for the API key in the 'x-api-key' header
 
   if (!apiKey || apiKey !== process.env.API_KEY) {
     return res.status(401).json({ message: 'Unauthorized: Invalid or missing API key' });
