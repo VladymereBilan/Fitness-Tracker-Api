@@ -371,7 +371,7 @@ process.on('SIGINT', () => {
   });
 });
 
-// Start Server
+// This is to start your server
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
