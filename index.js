@@ -6,8 +6,7 @@ const helmet = require('helmet');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 
-// Import the API key middleware
-const apiKeyMiddleware = require('./middlewares/authMiddleware');
+// Authentication removed: middleware import omitted for public routes
 
 // Initialize Express
 const app = express();
@@ -53,10 +52,10 @@ const progressRoutes = require('./routes/progressRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 
-// Use Routes with API Key Authentication Middleware
-app.use('/api/v1/workout', apiKeyMiddleware, workoutRoutes);
-app.use('/api/v1/progress', apiKeyMiddleware, progressRoutes);
-app.use('/api/v1/user', apiKeyMiddleware, userRoutes);
+// Use routes (authentication removed)
+app.use('/api/v1/workout', workoutRoutes);
+app.use('/api/v1/progress', progressRoutes);
+app.use('/api/v1/user', userRoutes);
 
 // Root Route for '/'
 app.get('/', (req, res) => {
