@@ -1,7 +1,7 @@
-// {
-//   "routes": [
-//     { "src": "/api-docs(.*)", "dest": "/api/server.js" },
-//     { "src": "/api/v1(.*)", "dest": "/api/server.js" },
-//     { "src": "/$", "dest": "/api/server.js" }
-//   ]
-// }
+{
+	"routes": [
+		{ "src": "/api-docs(.*)", "dest": "/api/server.js" },
+		{ "src": "/api/v1(.*)", "dest": "/api/server.js" },
+		{ "src": "/$", "dest": "/api/server.js" }
+	]
+}
