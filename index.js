@@ -27,11 +27,11 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'http://localhost:3000',
+        url: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : `http://localhost:${PORT}`,
       },
     ],
   },
-  apis: ['./index.js'], // Path to the API docs
+  apis: ['./index.js', './routes/*.js'], // Path to the API docs (include route files)
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
