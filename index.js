@@ -27,11 +27,11 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : `http://localhost:${PORT}`,
+        url: 'http://localhost:3000',
       },
     ],
   },
-  apis: ['./index.js', './routes/*.js'], // Path to the API docs (include route files)
+  apis: ['./index.js'], // Path to the API docs
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
@@ -371,10 +371,6 @@ process.on('SIGINT', () => {
 });
 
 // This is to start your server
-if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`🚀 Server running at http://localhost:${PORT}`);
-  });
-}
-
-module.exports = app;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
