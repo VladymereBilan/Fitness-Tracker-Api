@@ -24,6 +24,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^8.19.3",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "serverless-http": "^3.0.0"
   }
 }

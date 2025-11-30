@@ -370,7 +370,12 @@ process.on('SIGINT', () => {
   });
 });
 
-// This is to start your server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
-});
+// Start the server when run directly (keeps compatibility with serverless wrapper)
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
+  });
+}
+
+// Export app for serverless wrappers (Vercel `api/` functions)
+module.exports = app;
